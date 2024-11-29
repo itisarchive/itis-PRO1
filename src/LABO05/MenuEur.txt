@@ -1,0 +1,11 @@
+Coleslaw 1.74 EUR
+Frytki 1.28 EUR
+Hamburger 2.44 EUR
+Schabowy 2.90 EUR
+Pierogi 1.97 EUR
+Kotlet 2.20 EUR
+Kompot 0.81 EUR
+Kawa 1.04 EUR
+Herbata 0.81 EUR
+Cola 0.81 EUR
+Woda 0.58 EUR

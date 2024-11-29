@@ -1,0 +1,11 @@
+Coleslaw 7.50
+Frytki 5.50
+Hamburger 10.50
+Schabowy 12.50
+Pierogi 8.50
+Kotlet 9.50
+Kompot 3.50
+Kawa 4.50
+Herbata 3.50
+Cola 3.50
+Woda 2.50

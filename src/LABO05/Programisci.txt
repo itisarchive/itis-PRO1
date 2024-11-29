@@ -1,0 +1,6 @@
+Jan Kowalski	Groovy	Grails	Spring
+Anna Nowak	Groovy	Grails	Java	JEE	Spring
+Marek Wisniewski	Groovy	Java	Spring
+Piotr Malinowski	Grails
+Elżbieta Adamska	Grails	Java
+Paweł Wójcik	JEE

@@ -1,0 +1,5 @@
+Groovy	Jan Kowalski	Anna Nowak	Marek Wisniewski
+Grails	Anna Nowak	Jan Kowalski	Piotr Malinowski	Elżbieta Adamska
+Java	Marek Wisniewski	Anna Nowak	Elżbieta Adamska
+JEE	Paweł Wójcik	Anna Nowak
+Spring	Jan Kowalski	Anna Nowak	Marek Wisniewski
