@@ -19,10 +19,14 @@ anagrams.each { key, list ->
     println "${list.size()} ${list[0]}: $list"
 }
 
-def wordToCheck = showInputDialog("Enter a word to check for anagrams")
+def wordToCheck = showInputDialog "Enter a word to check for anagrams"
 def key = wordToCheck.toLowerCase().toList().sort().join()
+
 if (anagrams.containsKey(key)) {
     println "Anagrams for $wordToCheck: ${anagrams[key]}"
 } else {
     println "No anagrams found for $wordToCheck"
 }
+
+// anagramy z api, w porządku liczby anagramów słowa
+// dla podanego słowa w dialogu wypisanie jego anagramów

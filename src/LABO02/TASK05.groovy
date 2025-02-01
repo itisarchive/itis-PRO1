@@ -14,16 +14,16 @@ eachTuple(s) { a,b ->
 }
 println out
 
-def eachTuple(iterable, closure) {
-    def arg_count = closure.maximumNumberOfParameters
-    def args = new Object[arg_count]
-    def i = 0
-    def it = iterable.iterator()
-    while (it.hasNext()) {
-        args[i++] = it.next()
-        if (i == arg_count) {
-            closure(*args)
-            i = 0
+def eachTuple(iterable, Closure closure) {
+    def tupleSize = closure.maximumNumberOfParameters
+    def tuple = []
+    iterable.each { element ->
+        tuple << element
+        if (tuple.size() == tupleSize) {
+            closure(*tuple)
+            tuple.clear()
         }
     }
 }
+
+// działanie closure na kolejnych n elementach iterable

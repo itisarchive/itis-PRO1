@@ -2,23 +2,19 @@ package LABO03
 
 import static javax.swing.JOptionPane.showInputDialog
 
-
 def inputs = []
-
 while (true) {
-    def input = showInputDialog("Wprowadź dane w formie: pozycja = koszt")
-    if (input == null || input == "") {
-        break
-    }
+    def input = showInputDialog "Wprowadź dane w formie: pozycja = koszt"
+    if (!input) break
     inputs << input
 }
 
-costs = [:].withDefault { 0 }
+def costs = [:].withDefault { 0 }
 inputs.each {
-    def parts = it.split(" = ")
-    def position = parts[0]
-    def cost = parts[1] as Integer
-    costs[position] += cost
+    def (position, costStr) = it.split(" = ")
+    costs[position] += costStr.toInteger()
 }
 
 println costs
+
+// suma napisów pozycja = koszt z dialogów

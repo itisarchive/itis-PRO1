@@ -11,9 +11,9 @@ def wordComparator = Comparator.comparingInt(String::length)
         .thenComparing { a, b -> a.compareToIgnoreCase(b) }
 
 def sortedWords = new TreeSet(wordComparator)
-file.eachLine { line ->
-    sortedWords.addAll(line.split(/\W+/))
-}
+file.eachLine { sortedWords.addAll(it.split(/\W+/)) }
 
 println "Posortowane słowa:"
 sortedWords.each { println it }
+
+// posortowany zbiór słów z pliku wg dwóch kryteriów

@@ -28,7 +28,7 @@ test = { func, items, capacity, index ->
     println "Liczba wywołań: $calls"
     println "Liczniki wywołań dla unikatowych argumentów:"
     memo_calls.values().each { print it + " " }
-    println ""
+    println "\n"
 }
 
 def items = [[1, 1], [2, 6], [3, 18], [4, 22], [5, 28], [6, 40], [7, 60], [8, 75], [9, 90], [10, 100]]
@@ -46,3 +46,5 @@ knapsack = knapsack.memoize()
 
 println "===== TRAMPOLINE + MEMOIZATION ====="
 test(knapsack.memoize(), items, capacity, 0)
+
+// demonstracja trampoline i memoize na problemie plecakowym

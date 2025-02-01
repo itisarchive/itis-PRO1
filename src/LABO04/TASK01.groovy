@@ -1,16 +1,22 @@
 package LABO04
 
-def list1 = [ 'a', 'b', 'c']
-def list2 = [ 1, 8, 23 ]
+def list1 = ['a', 'b', 'c']
+def list2 = [1, 8, 23]
 
 list1.each { print it + " " }
 println ""
 list2.each { print it + " " }
-
-def list11 = list1.collect { it * 2 }
-def list22 = list2.collect { it + 1 }
-
 println ""
+
+def list11 = []
+def list12 = []
+
+list1.each { list11 << (it * 2) }
+list2.each { list12 << (it * 2) }
+
 list11.each { print it + " " }
 println ""
-list22.each { print it + " " }
+list12.each { print it + " " }
+println ""
+
+// wypisanie elementów listy i podwojenie elementów w liście za pomocą each

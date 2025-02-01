@@ -1,8 +1,10 @@
 package LABO03
 
 String reverseWords(String s) {
-    s.split(/\s/).collect { it.reverse() }.join(" ")
+    s.split(/\s+/).reverse().join(" ")
 }
 
 def s = "Ala ma kota i psa"
 println reverseWords(s)
+
+// funkcja odwracająca kolejność słów w napisie

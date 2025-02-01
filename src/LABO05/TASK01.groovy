@@ -17,7 +17,9 @@ def data = loadFileContent("Projekty.txt").collectEntries() {
     [projekt, osoby]
 }
 
-data.findAll { it.value.size() > 3 }.keySet().collect().with { saveFileContent("ProjektyDuze.txt", it) }
+data.findAll { it.value.size() > 3 }
+        .keySet()
+        .with { saveFileContent("ProjektyDuze.txt", it as List) }
 
 def programmers = [:].withDefault { [] }
 data.each { project, persons ->
@@ -26,6 +28,8 @@ data.each { project, persons ->
     }
 }
 
-programmers.collect { osoba, projos ->
-    "${osoba}\t${projos.join('\t')}"
+programmers.collect { osoba, projects ->
+    "${osoba}\t${projects.join('\t')}"
 }.with { saveFileContent("Programisci.txt", it) }
+
+// wyciągnięnie z Projekty.txt danych wg formatu i eksport do ProjektyDuze.txt i Programisci.txt

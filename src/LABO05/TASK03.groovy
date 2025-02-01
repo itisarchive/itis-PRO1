@@ -12,3 +12,5 @@ def listHtmlFiles = { directoryPath ->
 }
 
 listHtmlFiles(directory)
+
+// wylistowanie plików html z podanego katalogu rekurencyjnie

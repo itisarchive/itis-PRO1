@@ -6,3 +6,5 @@ String reverseChars(String s) {
 
 def s = "piesek"
 println reverseChars(s)
+
+// funkcja odwracająca string

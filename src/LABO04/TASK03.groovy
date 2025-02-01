@@ -14,18 +14,17 @@ def datePattern = ~/\b(\d{4})-(\d{2})-(\d{2})\b/
 def isValidDate = { year, month, day ->
     try {
         LocalDate.of(year as int, month as int, day as int)
-        return true
+        true
     } catch (Exception ignored) {
-        return false
+        false
     }
 }
 
-def validDates = []
-(text =~ datePattern).each { match ->
-    def (year, month, day) = match[1..3].collect { it as int }
-    if (isValidDate(year, month, day)) {
-        validDates << match[0]
-    }
-}
+def validDates = (text =~ datePattern).findAll {
+    def (year, month, day) = it[1..3]*.toInteger()
+    isValidDate(year, month, day)
+}*.getAt(0)
 
 println "Poprawne daty: ${validDates.join(', ')}"
+
+// znalezienie poprawnych dat w tekście

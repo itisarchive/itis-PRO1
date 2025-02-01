@@ -6,42 +6,38 @@ import javax.swing.*
 import java.awt.*
 
 new SwingBuilder().edt {
-    lookAndFeel('javax.swing.plaf.nimbus.NimbusLookAndFeel')
+    lookAndFeel 'javax.swing.plaf.nimbus.NimbusLookAndFeel'
 
-    acts = actions() {
-        action(id: 'font',
-                name: 'Zmień czcionkę',
-                closure: {
-                    def fonts = GraphicsEnvironment.localGraphicsEnvironment.allFonts*.name
-                    def selectedFont = JOptionPane.showInputDialog(null,
-                            'Wybierz czcionkę',
-                            'Zmiana czcionki',
-                            JOptionPane.PLAIN_MESSAGE,
-                            null,
-                            fonts as Object[],
-                            e.font.name)
-                    if (selectedFont) e.font = new Font(selectedFont, e.font.style, e.font.size)
-                })
-        action(id: 'size',
-                name: 'Zmień rozmiar czcionki',
-                closure: {
-                    def newSize = JOptionPane.showInputDialog(null,
-                            'Podaj rozmiar czcionki',
-                            e.font.size.toString())?.toInteger()
-                    if (newSize) e.font = e.font.deriveFont((float) newSize)
-                })
-        action(id: 'color',
-                name: 'Zmień kolor czcionki',
-                closure: {
-                    def newColor = JColorChooser.showDialog(null, 'Wybierz kolor czcionki', e.foreground)
-                    if (newColor) e.foreground = newColor
-                })
-        action(id: 'bg',
-                name: 'Zmień kolor tła',
-                closure: {
-                    def newBg = JColorChooser.showDialog(null, 'Wybierz kolor tła', e.background)
-                    if (newBg) e.background = newBg
-                })
+    actions {
+        action(id: 'font', name: 'Zmień czcionkę', closure: {
+            def fonts = GraphicsEnvironment.localGraphicsEnvironment.allFonts*.name
+            def selectedFont = JOptionPane.showInputDialog(
+                    null,
+                    'Wybierz czcionkę',
+                    'Zmiana czcionki',
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    fonts as Object[],
+                    e.font.name
+            )
+            if (selectedFont) e.font = new Font(selectedFont, e.font.style, e.font.size)
+        })
+        action(id: 'size', name: 'Zmień rozmiar czcionki', closure: {
+            def newSize = JOptionPane.showInputDialog(
+                    null,
+                    'Podaj rozmiar czcionki',
+                    e.font.size.toString()
+            )?.toInteger()
+            if (newSize) e.font = e.font.deriveFont(newSize as float)
+        })
+        action(id: 'color', name: 'Zmień kolor czcionki', closure: {
+            def newColor = JColorChooser.showDialog(null, 'Wybierz kolor czcionki', e.foreground)
+            if (newColor) e.foreground = newColor
+        })
+        action(id: 'bg', name: 'Zmień kolor tła', closure: {
+            def newBg = JColorChooser.showDialog(null, 'Wybierz kolor tła', e.background)
+            if (newBg) e.background = newBg
+        })
     }
 
     frame(title: 'Prosty edytor',
@@ -63,3 +59,5 @@ new SwingBuilder().edt {
         }
     }
 }
+
+// prosty edytor tekstowy
