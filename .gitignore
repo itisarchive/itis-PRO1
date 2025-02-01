@@ -83,3 +83,4 @@ local.properties
 .worksheet
 out
 gen
+**/*.md
